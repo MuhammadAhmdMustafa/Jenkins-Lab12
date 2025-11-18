@@ -9,10 +9,6 @@ pipeline {
         )
     }
 
-    tools {
-        maven 'Maven_3_9'
-    }
-
     environment {
         MY_TOOL_VERSION = '1.0.3'
     }
@@ -20,7 +16,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -v'
                 echo "Building with tool version: ${env.MY_TOOL_VERSION}"
             }
         }
